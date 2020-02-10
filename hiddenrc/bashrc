@@ -1,4 +1,7 @@
 ### BlackArch Linux settings ###
+stty -ixon # Disable ctrl-s and ctrl-q.
+shopt -s autocd #Allows you to cd into directory merely by typing the directory name.
+HISTSIZE= HISTFILESIZE= # Infinite history.
 
 # colors
 darkgrey="$(tput bold ; tput setaf 0)"
@@ -9,7 +12,8 @@ nc="$(tput sgr0)"
 # exports
 export PATH="/bin:/sbin:/usr/bin:/usr/sbin:/usr/local/bin:/usr/local/sbin:"
 export PATH="${PATH}/opt/bin:/usr/bin/core_perl:/usr/games/bin:"
-export PS1="\[$darkgrey\][ \[$red\]blackarch \[$white\]\W\[$red\] \[$darkgrey\]]\\[$red\]\$ \[$nc\]"
+# export PS1="\[$darkgrey\][ \[$red\]blackarch \[$white\]\W\[$red\] \[$darkgrey\]]\\[$red\]\$ \[$nc\]"
+export PS1="\[$(tput bold)\]\[$(tput setaf 1)\][\[$(tput setaf 3)\]\u\[$(tput setaf 2)\]@\[$(tput setaf 4)\]\h \[$(tput setaf 5)\]\W\[$(tput setaf 1)\]]\[$(tput setaf 7)\]\\$ \[$(tput sgr0)\]"
 export LD_PRELOAD=""
 export EDITOR="vim"
 
@@ -27,14 +31,9 @@ alias curl="curl --user-agent 'noleak'"
 
 
 export LANG=en_US.UTF-8
-export LANGUAGE=zh_CN:en_US
+export LANGUAGE=en_US
 export LC_CTYPE=en_US.UTF-8
-export GTK_IM_MODULE=fcitx
-export QT_IM_MODULE=fcitx
-export XMODIFIERS=@im=fcitx
 
-
-
-
+[ -f "$HOME/.xprofile" ] && . ~/.xprofile
 
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash

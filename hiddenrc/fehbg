@@ -1,0 +1,2 @@
+#!/bin/sh
+feh --no-fehbg --bg-scale $HOME/.wallpaper/300-Arch.png
