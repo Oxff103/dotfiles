@@ -11,6 +11,7 @@ if ! filereadable(expand(s:plug_file))
 	autocmd VimEnter * PlugInstall
 endif
 
+" Plug 'lilydjwg/fcitx.vim'
 " Plug {{{1
 let s:bundle_dir = $v.'/bundle'
 call plug#begin(s:bundle_dir)
@@ -18,7 +19,6 @@ Plug 'tpope/vim-surround'
 Plug 'scrooloose/nerdtree'
 Plug 'scrooloose/nerdcommenter'
 Plug 'vim-airline/vim-airline'
-Plug 'lilydjwg/fcitx.vim'
 Plug 'kshenoy/vim-signature'
 Plug 'terryma/vim-multiple-cursors'
 Plug 'suan/vim-instant-markdown', {'for': 'markdown'}
