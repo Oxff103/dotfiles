@@ -48,24 +48,6 @@ domain() {
     echo "Nothing to do!! Please check you lock exit!"
     exit
   fi
-  if [ -e ~/.fzf ]
-  then
-    ~/.fzf/uninstall
-    if [ -e ~/.fzf.orig ]
-    then
-      rm -rf ~/.fzf.orig
-    fi
-    mv ~/.fzf ~/.fzf.orig
-  fi
-  if [ -e ~/.tmux ]
-  then
-    if [ -e ~/.tmux.orig ]
-    then
-      rm -rf ~/.tmux.orig
-    fi
-    mv ~/.tmux ~/.tmux.orig
-    rm ~/.tmux.conf
-  fi
   for file in `cat $LOCKFILE | sort -n | uniq`;
   do
     delink $file

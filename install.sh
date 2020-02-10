@@ -64,16 +64,6 @@ main() {
   linkFolder config
   # Install hidden file to ~
   linkHiddenFile
-  # Install FZF
-  if [ -e ~/.fzf ]
-  then
-    printf "Installed $Red~/.fzf$Color_off\n"
-  else
-    printf "$Cyan Downloading  fzf -> $Blue$HOME/.fzf$Color_off\n"
-    git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
-    ~/.fzf/install
-    printf "$Blue Finished Installing fzf$Color_off\n"
-  fi
 }
 
 main
